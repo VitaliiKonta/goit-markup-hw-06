@@ -324,12 +324,41 @@ img {
   letter-spacing: 0.01em;
   color: #8e8f99;
 }
+.lable-box span {
+  margin-bottom: 4px;
+}
 
 .input-box {
   height: 40px;
+  width: 100%;
   border-radius: 4px;
   border: 1px solid rgba(33, 33, 33, 0.2);
   background-color: transparent;
+  outline: transparent;
+  transition: border-color 250ms var(--cubic), fill 250ms var(--cubic);
+  padding-left: 38px;
+}
+
+.input-box:hover,
+.input-box:focus {
+  border-color: var(--brand-color);
+  fill: var(--brand-color);
+}
+
+.input-box:is(:hover, :focus) + .modal-input-icon {
+  fill: var(--brand-color);
+}
+
+.modal-input-wrap {
+  position: relative;
+}
+
+.modal-input-icon {
+  position: absolute;
+  left: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: fill 250ms var(--cubic);
 }
 /* ++++++++++++++++++++++++++++++++++++++++++++++++++NO TEXTAREA CSS!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!+++++++++++++++++++++++++++++++++++++ */
 .textarea-box {
@@ -339,12 +368,27 @@ img {
   background-color: transparent;
   border-radius: 4px;
   border: 1px solid rgba(33, 33, 33, 0.2);
-} /* ++++++++++++++++++++++++++++++++++++++++++++++++++NO TEXTAREA CSS!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!+++++++++++++++++++++++++++++++++++++ */
+  font-family: "Roboto";
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 0.75em;
+  outline: transparent;
+  text-indent: 16px;
+  padding-top: 8px;
+  transition: border-color 250ms var(--cubic);
+}
 
-/* .textarea-box:placeholder-shown {
+.textarea-box:hover,
+.textarea-box:focus {
+  border-color: var(--brand-color);
+  fill: var(--brand-color);
+}
+
+.textarea-box::placeholder {
   color: rgba(117, 117, 117, 0.5);
-} */
-/* ++++++++++++++++++++++++++++++++++++++++++++++++++NO CHECKBOX ICON!!!!!!!!!!!!!!!!!!!!!!!!!!!!!+++++++++++++++++++++++++++++++++++++ */
+}
+
+/* ++++++++++++++++++++++++++++++++++++++++++++++++++ CHECKBOX ICON!!!!!!!!!!!!!!!!!!!!!!!!!!!!!+++++++++++++++++++++++++++++++++++++ */
 .check-box {
   display: flex;
   justify-content: center;
@@ -359,6 +403,9 @@ img {
   letter-spacing: 0.04em;
   color: #757575;
 }
+.check-box-href {
+  color: var(--brand-color);
+}
 
 .approval-input-box {
   position: absolute;
@@ -372,6 +419,30 @@ img {
   clip: rect(0 0 0 0);
   overflow: hidden;
 }
+.modal-check-icon {
+  margin-right: 8px;
+  border: 1.25px solid var(--main-header-color);
+  width: 16px;
+  height: 16px;
+  border-radius: 2px;
+  fill: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 300ms linear;
+}
+.approval-input-box:checked + .modal-check-icon {
+  background-color: var(--brand-color);
+  fill: #f4f4fd;
+  border: none;
+}
+
+/* .check-wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+} */
+
 /* ++++++++++++++++++++++++++++++++++++++++++++++++++NO CHECKBOX ICON!!!!!!!!!!!!!!!!!!!!!!!!!!!!!+++++++++++++++++++++++++++++++++++++ */
 
 .submit-btn {
