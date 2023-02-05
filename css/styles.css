@@ -431,7 +431,7 @@ img {
   justify-content: center;
   transition: background-color 300ms linear;
 }
-.approval-input-box:checked + .modal-check-icon {
+.approval-input-box:checked ~ .modal-check-icon {
   background-color: var(--brand-color);
   fill: #f4f4fd;
   border: none;
